@@ -4,7 +4,7 @@ metadata:
   name: playlist-api-service
   namespace: estersilva
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: estersilva-playlist-recommender
   ports:
