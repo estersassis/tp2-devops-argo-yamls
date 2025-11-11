@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playlist-api-deployment
+  namespace: estersilva
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: estersilva-playlist-recommender
+  template:
+    metadata:
+      labels:
+        app: estersilva-playlist-recommender
+    spec:
+      containers:
+      - name: flask-api
+        image: estersassis/flask-api:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50008
+        volumeMounts:
+          - name: shared-volume
+            mountPath: /shared
+            readOnly: true
+      volumes:
+      - name: shared-volume
+        persistentVolumeClaim:
+          claimName: project2-pvc
