@@ -3,6 +3,9 @@ kind: Job
 metadata:
   generateName: ml-train-job-
   namespace: estersilva
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   ttlSecondsAfterFinished: 600
   template:
