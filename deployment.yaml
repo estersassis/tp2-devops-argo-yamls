@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: flask-api
-        image: estersassis/flask-api:v5
+        image: estersassis/flask-api:v6
         imagePullPolicy: Always
         ports:
         - containerPort: 50008
