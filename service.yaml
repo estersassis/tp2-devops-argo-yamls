@@ -10,4 +10,4 @@ spec:
   ports:
     - protocol: TCP
       port: 50008
-      targetPort: 50008
+      targetPort: 5000
